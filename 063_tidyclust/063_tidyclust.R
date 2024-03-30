@@ -49,7 +49,7 @@ recipe_kmeans <- recipe(~ ., data = data_prep_tbl) %>%
     step_normalize(all_numeric_predictors()) %>%
     step_rm("ID")
 
-recipe_kmeans %>% prep() %>% juice() %>% glimpse()
+recipe_kmeans %>% prep() %>% bake(new_data = NULL) %>% glimpse()
 
 # 3.0 K-MEANS MODEL ----
 
